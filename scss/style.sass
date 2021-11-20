@@ -1,0 +1,28 @@
+@use 'animations'
+    
+$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+@mixin gradient($start:#fff, $end:#eaeaea)
+    background: #fff
+    background: radial-gradient($start, $end)
+
+%wrapper-shared
+    height: 100%
+    width: 100%
+    margin: 0
+
+body
+    font: 100% $font-stack
+    color: $primary-color
+    margin: 0
+
+    .wrapper
+        @extend %wrapper-shared
+        @include gradient
+        display: flex
+        min-height: 100vh
+
+        .hello-world
+            margin: 20% auto
+            overflow: visible
